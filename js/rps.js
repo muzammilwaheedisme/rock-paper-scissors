@@ -57,18 +57,17 @@ function isPlayerSelectionValid(playerSelection) {
 function game() {
     playerScore = 0;
     computerScore = 0;
-    for(let i=0; i<5; i++) {
-        input = prompt("Enter rock, paper or scissors");
-        computerChoice = getComputerChoice();
-        roundResult = playRPS(input, computerChoice);
-        console.log(typeof(roundResult));
-        console.log(roundResult.slice(0,8));
-        if(roundResult.slice(8) == "You Win!") {
-            playerScore++;
-        } else {
-            computerScore++;
-        }
+    input = prompt("Enter rock, paper or scissors");
+    computerChoice = getComputerChoice();
+    roundResult = playRPS(input, computerChoice);
+    console.log(typeof(roundResult));
+    console.log(roundResult.slice(0,8));
+    if(roundResult.slice(8) == "You Win!") {
+        playerScore++;
+    } else {
+        computerScore++;
     }
+
     if(playerScore > computerScore) {
         alert("Player Wins Game!");
     } else if(playerScore < ComputerScore) {
@@ -77,5 +76,6 @@ function game() {
         alert("It's a Tie!")
     }
 }
+
 
 game();
