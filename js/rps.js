@@ -61,11 +61,18 @@ function playRound(e) {
     computerChoice = getComputerChoice();
     roundResult = playRPS(input, computerChoice);
 
+    playerHand = document.getElementById("player-hand");
+    playerHand.textContent = input;
+    computerHand = document.getElementById("computer-hand");
+    computerHand.textContent = computerChoice;
+
     if(roundResult.slice(0,8) == "You Win!") {
         playerScore++;
+        document.getElementById("player-score").textContent = playerScore;
     }
     if(roundResult.slice(0,9) == "You Lose!") {
         computerScore++;
+        document.getElementById("computer-score").textContent = computerScore;
     }
 
     if(playerScore === 5) {

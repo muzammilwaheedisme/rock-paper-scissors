@@ -1,0 +1,55 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    font-size: 48px;
+    font-weight: 900;
+}
+
+.round-windows {
+    display: flex;
+    gap: 50px;
+    margin-bottom: 24px;
+}
+
+.round-window {
+    border-style: solid;
+    border-color: blue;
+    min-width: 120px;
+    min-height: 100px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.game-buttons {
+    display: flex;
+    gap: 50px;
+}
+
+.score-boxes {
+    display: flex;
+    gap: 50px;
+    margin-top: 24px;
+}
+
+.score-box {
+    display: flex;
+    flex-direction: column;
+    border-style: solid;
+    border-color: blue;
+    padding: 5px;
+    min-width: 100px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.score, .hand{
+    font-size: 48px;
+    padding: 0;
+    margin: 0;
+    border-style: solid;
+    border-color: black;
+}
