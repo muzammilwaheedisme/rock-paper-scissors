@@ -86,7 +86,3 @@ computerScore = 0;
 const buttons = Array.from(document.querySelectorAll('button'));
 
 buttons.forEach(button => button.addEventListener('click', playRound));
-
-if(playerScore === 5) {
-    alert("player wins");
-}
