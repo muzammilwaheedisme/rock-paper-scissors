@@ -54,31 +54,39 @@ function isPlayerSelectionValid(playerSelection) {
     }
 }
 
-function game() {
-    playerScore = 0;
-    computerScore = 0;
-    
-
-    if(playerScore > computerScore) {
-        alert("Player Wins Game!");
-    } else if(playerScore < ComputerScore) {
-        alert("Computer Wins Game!");
-    } else {
-        alert("It's a Tie!")
-    }
-}
-
-function playRound() {
-    input = prompt("Enter rock, paper or scissors");
+function playRound(e) {
+    console.log("enter playRound");
+    input = e.target.textContent;
+    console.log(input);
     computerChoice = getComputerChoice();
     roundResult = playRPS(input, computerChoice);
-    console.log(typeof(roundResult));
-    console.log(roundResult.slice(0,8));
-    if(roundResult.slice(8) == "You Win!") {
-        return "You Win!";
-    } else {
-        return "You Lose!";
+
+    if(roundResult.slice(0,8) == "You Win!") {
+        playerScore++;
+    }
+    if(roundResult.slice(0,9) == "You Lose!") {
+        computerScore++;
+    }
+
+    if(playerScore === 5) {
+        alert("player wins");
+        playerScore = 0;
+        computerScore = 0;
+    }
+    if(computerScore === 5) {
+        alert("computer wins");
+        playerScore = 0;
+        computerScore = 0;
     }
 }
 
-game();
+playerScore = 0;
+computerScore = 0;
+
+const buttons = Array.from(document.querySelectorAll('button'));
+
+buttons.forEach(button => button.addEventListener('click', playRound));
+
+if(playerScore === 5) {
+    alert("player wins");
+}
