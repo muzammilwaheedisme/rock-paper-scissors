@@ -55,9 +55,9 @@ function isPlayerSelectionValid(playerSelection) {
 }
 
 function playRound(e) {
-    console.log("enter playRound");
+    //console.log("enter playRound");
     input = e.target.textContent;
-    console.log(input);
+    //console.log(input);
     computerChoice = getComputerChoice();
     roundResult = playRPS(input, computerChoice);
 
